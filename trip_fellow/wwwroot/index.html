@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trip Fellow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .img-fluid.max-width {
+            max-width: 100%;
+        }
+        .carousel-item img {
+            height: 200px; 
+            width: auto; 
+        }
+    
+       
+    </style>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="first">
+        <nav class="navbar navbar-expand-lg mb-5">
+            <div class="container-fluid">
+  
+                <a class="navbar-brand logo" href="#"><img src="file.png" width="200px" class="img-fluid" alt="Logo"></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarText">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light fs-4" aria-current="page" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-4" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-4" href="#">Help</a>
+                        </li>
+                    </ul>
+
+                    <span>
+                        <img src="user (1).png" width="50px" class="user" alt="User Icon">
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mt-5">
+                    <h1 class="display-1 text-light home-text">Welcome to trip<br>fellow</h1>
+                    <h2 class="text-light">" Your Passport to Endless Adventures ! "</h2>
+                </div>
+                <div class="col-lg-6 mt-5">
+                    <img src="img.png" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grey">
+        <div class="container-fluid second d-flex justify-content-center align-items-center">
+            <h2>Services</h2>
+        </div>
+        <div class="container-fluid mb-3 d-flex third justify-content-center align-items-center">
+            <h3>Tailored Services, Seamless Travels!</h3>
+        </div>
+        <div class="container-fluid fourth grey mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <h4>Flights</h4>
+                        <img src="ross-parmly-rf6ywHVkrlY-unsplash.jpg" alt="Flights" class="img-fluid max-width rounded">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h4>Hotels</h4>
+                        <img src="visualsofdana-T5pL6ciEn-I-unsplash.jpg" alt="Hotels" class="img-fluid max-width rounded">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h4>Car Rentals</h4>
+                        <img src="averie-woodard-5d20kdvFCfA-unsplash.jpg" alt="Car Rentals" class="img-fluid max-width rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="colored-bg">
+        <div class="colored-bg container-fluid recom d-flex justify-content-center align-items-center">
+            <h2>Recommendations</h2>
+        </div>
+        <div class="colored-bg container-fluid mb-3 d-flex third justify-content-center align-items-center">
+            <h3>Discover the best in this world based on travellers' experience!</h3>
+        </div>
+        <div class="colored-bg container-fluid fourth grey mt-5">
+            <div id="recommendationsCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                </div>
+              
+                <button class="carousel-control-prev" type="button" data-bs-target="#recommendationsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#recommendationsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="admin container mt-5 mb-5">
+        <h2>Add Recommendation</h2>
+        <form id="addRecommendationForm" action="/add-recommendation" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="recommendationName" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="recommendationName" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="recommendationImage" class="form-label">Image:</label>
+                <input type="file" class="form-control" id="recommendationImage" name="image" required accept="image/*">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Add Recommendation</button>
+        </form>
+    </div>
+
+
+    <div class="admin container mt-5 mb-5">
+        <h2>Delete Recommendation</h2>
+        <form id="deleteRecommendationForm" method="post" action="/delete-recommendation">
+            <div class="mb-3">
+                <label for="recommendationName" class="form-label">Select Recommendation:</label>
+                <select class="form-select" id="fff" name="name">
+                </select>
+
+            </div>
+            <button type="submit" class="btn btn-danger">Delete Recommendation</button>
+        </form>
+    </div>
+
+
+
+
+    <div class="container-fluid aqua pt-5 pb-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h2>Share Your Experience!</h2>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body mt-4">
+                        <form>
+                            <div class="form-group mt-4">
+                                <label for="recom" class="pb-3">Activity Type</label>
+                                <input type="text" class="form-control" id="recom" placeholder="Enter activity">
+                            </div>
+                            <div class="form-group mt-4">
+                                <label for="country" class="pb-3">Country</label>
+                                <input type="text" class="form-control" id="country" placeholder="Enter country">
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <label for="rating">Rate </label><br>
+                                <span class="fa fa-star rating" data-rating="1"></span>
+                                <span class="fa fa-star rating" data-rating="2"></span>
+                                <span class="fa fa-star rating" data-rating="3"></span>
+                                <span class="fa fa-star rating" data-rating="4"></span>
+                                <span class="fa fa-star rating" data-rating="5"></span>
+                                <input type="hidden" name="rating" id="rating-input" value="0">
+                            </div>
+                            <div class="form-group mt-4">
+                                <label for="comment">Comment</label>
+                                <textarea class="form-control" id="comment" rows="3"></textarea>
+                            </div>
+                      
+                            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 designed by Jana Ashraf</p>
+    </footer>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const stars = document.querySelectorAll('.rating');
+
+            stars.forEach(star => {
+                star.addEventListener('click', function () {
+                    const ratingValue = parseInt(star.getAttribute('data-rating'));
+                    document.getElementById('rating-input').value = ratingValue;
+
+                    stars.forEach(s => {
+                        s.classList.remove('checked');
+                    });
+
+                    for (let i = 0; i < ratingValue; i++) {
+                        stars[i].classList.add('checked');
+                    }
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", async function () {
+
+            try {
+                const response = await fetch('/recommendations');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch recommendations');
+                }
+                const recommendationData = await response.json();
+                console.log(recommendationData);
+
+
+                populateComboBox(recommendationData);
+                updateRecommendations(recommendationData);
+            } catch (error) {
+                console.error(error);
+            }
+        });
+
+        document.querySelector('#addRecommendationForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const recommendationName = formData.get('name').toLowerCase();
+            validateInput(recommendationName);
+            const comboBox = document.getElementById('fff');
+            const options = comboBox.options;
+            let isDuplicate = false;
+
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].text.toLowerCase() === recommendationName) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            if (isDuplicate) {
+                alert('Recommendation name already exists. Please enter a unique name.');
+                return;
+            }
+
+            try {
+                const response = await fetch('/add-recommendation', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to add recommendation');
+                }
+
+                const recommendationData = await response.json();
+                updateNewRecommendations(recommendationData);
+                location.reload();
+
+            } catch (error) {
+                console.error(error);
+            }
+        });
+
+        document.querySelector('.carousel-control-prev').addEventListener('click', function () {
+            const carousel = document.querySelector('#recommendationsCarousel');
+            const carouselInstance = new bootstrap.Carousel(carousel);
+            carouselInstance.prev();
+        });
+
+        document.querySelector('.carousel-control-next').addEventListener('click', function () {
+            const carousel = document.querySelector('#recommendationsCarousel');
+            const carouselInstance = new bootstrap.Carousel(carousel);
+            carouselInstance.next();
+        });
+
+        function updateRecommendations(recommendationData) {
+
+            const recommendationsContainer = document.querySelector('.carousel-inner');
+
+            recommendationData.forEach(recommendation => {
+                console.log(recommendation); // Log each recommendation object
+
+                const recommendationElement = document.createElement('div');
+                recommendationElement.classList.add('carousel-item');
+                if (!recommendationsContainer.querySelector('.carousel-item')) {
+                    recommendationElement.classList.add('active');
+                }
+
+
+
+                recommendationElement.innerHTML = `
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 text-center">
+                            <h4>${recommendation.name}</h4>
+                            <img src="${recommendation.imageUrl}" alt="${recommendation.name}" class="img-fluid max-width rounded">
+                        </div>
+                    </div>
+                `;
+                recommendationsContainer.appendChild(recommendationElement);
+            });
+            const carousel = document.querySelector('.carousel-inner');
+            new bootstrap.Carousel(carousel);
+            document.querySelector('#addRecommendationForm').reset();
+        }
+        function updateNewRecommendations(recommendationData) {
+            const recommendationsContainer = document.querySelector('.carousel-inner');
+            const recommendationElement = document.createElement('div');
+            recommendationElement.classList.add('carousel-item');
+            if (!recommendationsContainer.querySelector('.carousel-item')) {
+                recommendationElement.classList.add('active');
+            }
+            console.log(recommendationData.name);
+            recommendationElement.innerHTML = `
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 text-center">
+                            <h4>${recommendationElement.Name || 'Unknown'}</h4>
+                            <img src="${recommendationElement.ImageUrl || 'default.jpg'}" alt="${recommendationElement.Name || 'Unknown'}" class="img-fluid max-width rounded">
+                        </div>
+                    </div>
+                `;
+            recommendationsContainer.appendChild(recommendationElement);
+            document.querySelector('#addRecommendationForm').reset();
+        }
+        document.querySelector('#deleteRecommendationForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch('/delete-recommendation', {
+                    method: 'DELETE',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to delete recommendation');
+                }
+
+                window.location.reload();
+
+            } catch (error) {
+                console.error(error);
+            }
+        });
+
+        function printComboBoxOptions() {
+            console.log("after");
+            const comboBox = document.getElementById('fff');
+            const options = comboBox.options;
+
+            for (let i = 0; i < options.length; i++) {
+                console.log("Option text: " + options[i].text + ", Option value: " + options[i].value);
+            }
+        }
+
+
+        function populateComboBox(recommendationData) {
+
+            const comboBox = document.getElementById('fff');
+
+            if (Array.isArray(recommendationData)) {
+                recommendationData.forEach(recommendation => {
+                    console.log(recommendation);
+                    const option = document.createElement('option');
+                    option.text = recommendation.name;
+                    console.log(option.text);
+                    option.value = recommendation.name;
+                    console.log(option.value);
+                    comboBox.appendChild(option);
+                });
+            } else {
+                console.log("entereddd2222");
+                console.log(recommendationData);
+                const option = document.createElement('option');
+                option.text = recommendationData.name;
+
+                console.log(recommendationData.name);
+                option.value = recommendationData.name;
+
+                comboBox.appendChild(option);
+            }
+        }
+
+        function validateInput(input) {
+
+            const trimmedValue = input.toString().trim();
+
+            if (trimmedValue === '') {
+
+                alert('Input is empty or contains only whitespace');
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
