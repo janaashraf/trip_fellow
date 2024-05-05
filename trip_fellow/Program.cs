@@ -7,11 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = "Data Source=wwwroot/database.db;";
 builder.Services.AddSingleton<IDbConnection>(_ => new SqliteConnection(connectionString));
 var app = builder.Build();
-
 using (var connection = new SqliteConnection(connectionString))
 {
     connection.Open();
-
     // Create the Recommendations table if it doesn't exist
     connection.Execute(@"CREATE TABLE IF NOT EXISTS Recommendations (
                                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -26,7 +24,6 @@ app.MapGet("/", async context =>
 });
 
 app.UseStaticFiles();
-
 // endpoint to fetch recommendations
 app.MapGet("/recommendations", async (HttpContext context, IDbConnection db) =>
 {
