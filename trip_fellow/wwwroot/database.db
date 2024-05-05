@@ -1,7 +1,0 @@
-﻿CREATE TABLE Recommendations (
-    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-    Name TEXT UNIQUE,
-    ImageUrl TEXT
-);
-
-
