@@ -4,15 +4,21 @@ using System.Text.Json;
 using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = "Data Source=database.db;";
+var connectionString = "Data Source=wwwroot/database.db;";
 builder.Services.AddSingleton<IDbConnection>(_ => new SqliteConnection(connectionString));
 var app = builder.Build();
 
 using (var connection = new SqliteConnection(connectionString))
 {
     connection.Open();
-}
 
+    // Create the Recommendations table if it doesn't exist
+    connection.Execute(@"CREATE TABLE IF NOT EXISTS Recommendations (
+                                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                Name TEXT NOT NULL,
+                                ImageUrl TEXT NOT NULL
+                            )");
+}
 app.MapGet("/", async context =>
 {
     context.Response.Headers["Content-Type"] = "text/html";
